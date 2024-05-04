@@ -3,7 +3,7 @@ title: Welcome to cherisebryan.com!
 date: 2017-03-23
 publishdate: 2017-03-24
 ---
-Thank you for visiting cherisebryan.com! This website is currently under construction
+Thank you for visiting! This website is currently under construction
 
 ### Bio
 
