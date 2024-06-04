@@ -1,4 +1,62 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'hugo-simple'
+# Basic config
+baseURL = "https://example.com"
+theme = "hugo-simple"
+languageCode = "en"   
+title = "Cherise Bryan's site"
+copyright = "© 2024 Cherise Bryan"
+
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
+
+# https://github.com/gohugoio/hugo/issues/12152
+capitalizeListTitles = false
+
+# Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
+disableKinds = ["taxonomy"]
+# ignoreErrors = ["error-disable-taxonomy"]
+[taxonomies]
+tag = "tags"
+
+[permalinks]
+blog = "/:slugorfilename/"
+tags = "/blog/:slug"
+
+[markup.goldmark.renderer]
+unsafe = true
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+[markup.highlight]
+lineNos = true
+lineNumbersInTable = false
+noClasses = true
+style = "catppuccin-mocha"
+
+[params]
+title = "Cherise Bryan's site"
+description = "Cherise Bryan's Hugo site"
+favicon = "images/favicon.png"
+dateFormat = "2006-01-02"
+hideMadeWithLine = false
+hideRSSLink = true
+[params.author]
+name = "Cherise Bryan"
+email = "cherise.bryan@outlook.com"
+
+[[menu.main]]
+name = "Home"
+pageRef = "/"
+weight = 10
+[[menu.main]]
+name = "Blog"
+pageRef = "/blog"
+weight = 20
+
+[services.rss]
+limit = 42
+
+[outputs]
+# Generate RSS for home only.
+section = ["html"]
+taxonomy = ["html"]
+term = ["html"]
