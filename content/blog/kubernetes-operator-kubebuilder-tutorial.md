@@ -67,7 +67,7 @@ Similar to how the kube-controller-manager manages controllers that are native t
 
 At this point we're finally read to get everything running on a Kubernetes cluster. To bootstrap a new local Kind cluster, create a file called `cluster-config.yaml` with the contents shown below.
 
-```
+```yaml
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 name: kind
@@ -111,7 +111,7 @@ make run
 ```
 
 We can then replace the contents of `config/samples/batch_v1_cronjob.yaml` with the following manifest:
-```
+```yaml
 apiVersion: batch.tutorial.kubebuilder.io/v1
 kind: CronJob
 metadata:
@@ -148,7 +148,7 @@ If you now check the terminal that is running `make run`, you will see many new 
 ### Deploy the Controller to the Kind Cluster
 Now that we have confirmed the controller is working as expected, we can deploy it to the cluster.
 
-But first, let's stop the locally running controller by pressing `Ctrl + C` in the terminal. You'll notice that after doing so, you won't see any newly completed jobs when running `kubectl get job`. This again goes to show that without the controller, our Custom Resources won't do much.
+But first, let's stop the locally running controller by pressing <kbd>Ctrl</kbd> + <kbd>C</kbd> in the terminal. You'll notice that after doing so, you won't see any newly completed jobs when running `kubectl get job`. This again goes to show that without the controller, our Custom Resources won't do much.
 
 Run these commands to deploy the controller to the kind cluster.
 ```
@@ -203,7 +203,7 @@ Finally, we can re-deploy the controller with the new image:
 make deploy IMG=kubebuilder-tutorial/cronjob-controller:0.0.2
 ```
 Now if you try to create a second CronJob with an invalid schedule, the Validator should catch the issue and return an error:
-```
+```yaml
 apiVersion: batch.tutorial.kubebuilder.io/v1
 kind: CronJob
 metadata:
