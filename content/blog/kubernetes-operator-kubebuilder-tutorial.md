@@ -166,11 +166,11 @@ kubectl get jobs
 ```
 ## Step 5: Testing the Operator
 ### Write and Run Unit Tests
-The functionality of the controller should be tested thoroughly to prevent unexpected behaviour. By default, two test files for the controller is included in `project/internal/controller/`. You can run the tests by running
+The functionality of the controller should be tested thoroughly to prevent unexpected behaviour. By default, two unit test files are included in `project/internal/controller/`. You can run them by running:
 ```
 make test
 ```
-Currently, the test will fail but if you replace `project/internal/controller/cronjob_controller_test.go` with [project/internal/controller/cronjob_controller_test.go @ github.com/kubernetes-sigs/kubebuilder](https://github.com/kubernetes-sigs/kubebuilder/blob/master/docs/book/src/cronjob-tutorial/testdata/project/internal/controller/cronjob_controller_test.go) and `project/internal/controller/suite_test.go` with [project/internal/controller/suite_test.go @ github.com/kubernetes-sigs/kubebuilder](https://github.com/kubernetes-sigs/kubebuilder/blob/master/docs/book/src/cronjob-tutorial/testdata/project/internal/controller/suite_test.go), they should pass. Note, you may need to 
+Currently, the test will fail. However, if you replace `project/internal/controller/cronjob_controller_test.go` with [project/internal/controller/cronjob_controller_test.go @ github.com/kubernetes-sigs/kubebuilder](https://github.com/kubernetes-sigs/kubebuilder/blob/master/docs/book/src/cronjob-tutorial/testdata/project/internal/controller/cronjob_controller_test.go) and `project/internal/controller/suite_test.go` with [project/internal/controller/suite_test.go @ github.com/kubernetes-sigs/kubebuilder](https://github.com/kubernetes-sigs/kubebuilder/blob/master/docs/book/src/cronjob-tutorial/testdata/project/internal/controller/suite_test.go), they should pass.
 
 ### Run End-to-End Tests
 You can implement automated end-to-end tests that mimic real user behaviour using Kind. The default kubebuilder boilerplate includes a simple end-to-end test in the folder `project/test/e2e/` that you can run. It requires that an existing Kind cluster named `kind` is running.
