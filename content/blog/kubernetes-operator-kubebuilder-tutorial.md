@@ -1,5 +1,6 @@
 +++
 title = 'Build Your First Kubernetes Operator'
+date = 2024-09-15
 draft = false
 +++
 
