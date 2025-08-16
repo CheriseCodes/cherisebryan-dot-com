@@ -3,7 +3,7 @@ baseURL = "https://example.com"
 theme = "hugo-simple"
 languageCode = "en"   
 title = "Cherise Bryan's site"
-copyright = "© 2024 Cherise Bryan"
+copyright = "© 2025 Cherise Bryan"
 
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true
