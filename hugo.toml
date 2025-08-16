@@ -48,13 +48,17 @@ name = "Home"
 pageRef = "/"
 weight = 10
 [[menu.main]]
+name = "About Me"
+pageRef = "/about"
+weight = 20
+[[menu.main]]
 name = "Blog"
 pageRef = "/blog"
-weight = 20
+weight = 30
 [[menu.main]]
 name = "Certifications"
 pageRef = "/certs"
-weight = 20
+weight = 40
 
 [services.rss]
 limit = 42
